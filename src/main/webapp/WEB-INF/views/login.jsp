@@ -49,7 +49,7 @@
     <%--<c:if test="${success != null}">--%>
         <%--<div class="alert alert-success" role="alert"><spring:message code="${success}" /></div>--%>
     <%--</c:if>--%>
-    <input name="username" type="text" class="form-control" placeholder="Name or Email" required autofocus>
+    <input name="username" type="text" class="form-control" placeholder="Name" required autofocus>
     <input name="password" type="password" class="form-control" placeholder="Password" required>
     <button class="btn btn-lg btn-primary btn-block" type="submit">Login</button>
 

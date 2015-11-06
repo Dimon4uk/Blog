@@ -15,4 +15,6 @@ public interface UserService{
     User findByName(String name);
 
     User save(User user);
+
+    void deleteUser(Integer id);
 }

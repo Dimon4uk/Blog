@@ -29,4 +29,9 @@ public class BlogServiceImpl implements BlogService {
         blogRepository.save(blog);
        //todo
     }
+
+    @Override
+    public void deleteBlog(Integer id) {
+        blogRepository.delete(id);
+    }
 }

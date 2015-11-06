@@ -8,4 +8,6 @@ import dev.com.domain.Blog;
 public interface BlogService {
 
     void createBlog(Blog blog, String name);
+
+    void deleteBlog(Integer id);
 }

@@ -28,4 +28,9 @@ public class UserController {
         return "user-detail";
     }
 
+    @RequestMapping("/users/delete/{id}")
+    public String deleteUser(@PathVariable Integer id) {
+        userService.deleteUser(id);
+        return "redirect:/users";
+    }
 }
