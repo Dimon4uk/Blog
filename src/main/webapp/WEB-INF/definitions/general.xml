@@ -43,4 +43,10 @@
         <put-attribute name="current" value="account"/>
     </definition>
 
+    <definition name="blog-detail" extends="common">
+        <put-attribute name="title" value="Blog detail" />
+        <put-attribute name="body" value="/WEB-INF/views/blog-detail.jsp" />
+        <put-attribute name="current" value="blog-detail"/>
+    </definition>
+
 </tiles-definitions>

@@ -2,6 +2,8 @@ package dev.com.controller;
 
 import dev.com.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.method.P;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -28,8 +30,10 @@ public class UserController {
         return "user-detail";
     }
 
+
+//    @PreAuthorize("#user.name == authentication.name or hasRole('ROLE_ADMIN')")
     @RequestMapping("/users/delete/{id}")
-    public String deleteUser(@PathVariable Integer id) {
+    public String deleteUser(@PathVariable @P("user") Integer id) {
         userService.deleteUser(id);
         return "redirect:/users";
     }

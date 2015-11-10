@@ -1,7 +1,7 @@
 package dev.com.domain;
 
 import javax.persistence.*;
-import java.sql.Date;
+import java.util.Date;
 
 /**
  * Created by dmytrok on 21.10.15.

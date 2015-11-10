@@ -10,4 +10,8 @@ public interface BlogService {
     void createBlog(Blog blog, String name);
 
     void deleteBlog(Integer id);
+
+    Blog findByUserId(Integer id);
+
+    Blog findById(Integer id);
 }

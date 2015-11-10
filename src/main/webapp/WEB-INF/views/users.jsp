@@ -19,9 +19,9 @@
                 </a>
             </td>
             <td align="right">
-                <buttonm id="deleteTriggerBtn" data-toggle="modal" data-target="#deleteUser" type="button" class="btn btn-danger" data-id="${user.id}">
+                <button id="deleteTriggerBtn" data-toggle="modal" data-target="#deleteUser" type="button" class="btn btn-danger" data-id="${user.id}">
                     Delete
-                </buttonm>
+                </button>
 
             </td>
         </tr>
@@ -32,37 +32,20 @@
 <script type="text/javascript">
 
     $(function(){
-
-
-        function deleteUser(url) {
-           return location.url;
-        }
+        var deleteUrl = '<spring:url value="/users/delete/"/>';
+        var userId = null;
 
         $('#deleteUser').on('show.bs.modal', function (event) {
-            var id = $(event.relatedTarget).data('id');
-            console.log(id);
+            $('#deleteUserBtn').attr('href', '');
+            userId = $(event.relatedTarget).data('id');
 
-            var url = '<spring:url value="/users/delete/"/>';
-            url = url + id;
-            console.log(url);
-            $('#deleteUserBtn').on('click', deleteUser(url));
+            $('#deleteUserBtn').attr('href',deleteUrl + userId);
+            console.log( $('#deleteUserBtn').attr('href'))
+        });
 
-        })
+
     });
 
-//        $("#deleteTriggerBtn").on('button', function(event){
-//            var id = $(event.relatedTarget).data("id");
-//
-//            $("#deleteUser").on(function(id){
-//                $(this).modal('show');
-//            })
-//        });
-
-//    $("deleteTrigger").onclick(function(e) {
-//        e.preventDefault();
-//        $("#deleteUser .deleteBtn").attr("href",$(this).attr("href"));
-//        $("#deleteUser").modal();
-//    });
 </script>
 
 
@@ -78,10 +61,9 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
-                <%--<button id="deleteUserBtn" type="button" class="btn btn-danger" data-dismiss="modal">Delete</button>--%>
-                <button id="deleteUserBtn" type="button" class="btn btn-danger" data-dismiss="modal">
+                <a id="deleteUserBtn" class="btn btn-danger" href="" >
                     Delete
-                </button>
+                </a>
             </div>
         </div><!-- /.modal-content -->
     </div><!-- /.modal-dialog -->

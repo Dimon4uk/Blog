@@ -9,4 +9,6 @@ import java.util.List;
  */
 public interface ItemService {
     List<Item> findAllItems();
+
+    void createItem(Item item, Integer blogId);
 }

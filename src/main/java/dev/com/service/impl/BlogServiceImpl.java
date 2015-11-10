@@ -31,7 +31,18 @@ public class BlogServiceImpl implements BlogService {
     }
 
     @Override
+    @Transactional
     public void deleteBlog(Integer id) {
         blogRepository.delete(id);
+    }
+
+    @Override
+    public Blog findByUserId(Integer id) {
+        return blogRepository.findByUser(id);
+    }
+
+    @Override
+    public Blog findById(Integer id) {
+        return blogRepository.findOne(id);
     }
 }
